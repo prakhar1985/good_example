@@ -1,4 +1,10 @@
 - hosts: localhost
   roles:
+     - osp-workstation
      - osp-network
-     - {name: osp-instances, instance_name=frontend, group=frontends, deployment=dev}
+     - osp-keypair
+  tasks:
+  - name: Create frontend instance
+    include_role:
+       name: osp-instances
+       vars_from: frontend.yaml
