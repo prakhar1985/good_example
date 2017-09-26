@@ -1,0 +1,4 @@
+- hosts: localhost
+  roles:
+     - osp-network
+     - osp-instances
