@@ -1,4 +1,4 @@
 - hosts: localhost
   roles:
      - osp-network
-     - osp-instances
+     - {name: osp-instances, instance_name=frontend, group=frontends, deployment=dev}
