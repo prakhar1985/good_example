@@ -4,9 +4,10 @@
       name: "{{ instance_name }}"
       image: rhel-guest
       meta: "group={{ group }},deployment_name={{ deployment }}"
-      flavor: m1.small
+      flavor: m2.small
       security_groups: "{{ security_group_name }}"
       key_name: ansible_ssh
+      wait: yes
       nics:
       - net-name: int_network
       userdata: |
@@ -28,10 +29,10 @@
     register: instancefloatingip
   - name: Show "{{ instanceip }}" public IP
     debug: var=instancefloatingip.floating_ip.floating_ip_address
-#  - name: Wait for "{{ instance_name }}" to be available
-#    wait_for:
-#      host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
-#      port: 22
-#      search_regex: OpenSSH
-#      timeout: 600
-#    delegate_to: localhost
+  - name: Wait for "{{ instance_name }}" to be available
+    wait_for:
+      host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
+      port: 22
+      search_regex: OpenSSH
+      timeout: 600
+    delegate_to: localhost

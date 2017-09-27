@@ -4,6 +4,7 @@
      - osp-network
      - osp-keypair
      - osp-securitygroup
+     - osp-flavor
   tasks:
 ##Create Fronend Instance
   - name: Create frontend instance
@@ -29,20 +30,14 @@
   - name: Gather facts
     include_role: 
        name: osp-facts
-  - name: Wait for "{{ instance_name }}" to be available
-    wait_for:
-      host: 10.10.10.3
-      port: 22
-      search_regex: OpenSSH
-      timeout: 600
-    delegate_to: localhost
-
 
 ###Configuration on OSP Instances
 
-- hosts: apps
+- hosts: dev
   gather_facts: false
   become: yes
   tasks:
   - name: Ping
     ping:
+    tags:
+     - test
