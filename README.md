@@ -1,7 +1,7 @@
 main.yaml
  
-#Step 1: Deploy Insfrastructure on OSP 10
--Variables to be set in respective files
+Step 1: Deploy Insfrastructure on OSP 10
+*Variables to be set in respective files
 
 >roles/osp-instances/frontend.yaml
 ```
@@ -30,6 +30,6 @@ instance_name: db
 group: appdbs
 deployment: dev
 ```
-#Step 2: Configure Instances 
+Step 2: Configure Instances 
 
-#Step 3: Deploy example APP
+Step 3: Deploy example APP
