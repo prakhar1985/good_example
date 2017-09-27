@@ -9,22 +9,27 @@
   - name: Create frontend instance
     include_role:
        name: osp-instances
-       vars_from: frontend.yaml
+       vars_from: "{{ item }}"
+    with_items:
+       - frontend.yaml
+       - app1.yaml
+       - app2.yaml
+       - db.yaml
 ###Create App1 server 
-  - name: Create app2 instance
-    include_role:
-       name: osp-instances
-       vars_from: app1.yaml
+#  - name: Create app2 instance
+#    include_role:
+#       name: osp-instances
+#       vars_from: app1.yaml
 ##Create App2 server
-  - name: Create app2 instance
-    include_role:
-       name: osp-instances
-       vars_from: app2.yaml
+#  - name: Create app2 instance
+#    include_role:
+#       name: osp-instances
+#       vars_from: app2.yaml
 ##Create DB server
-  - name: Create db instance
-    include_role:
-       name: osp-instances
-       vars_from: db.yaml
+#  - name: Create db instance
+#    include_role:
+#       name: osp-instances
+#       vars_from: db.yaml
 ## Alternate Method to create dynmaic inventory
   - name: Gather facts
     include_role: 

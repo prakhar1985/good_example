@@ -5,7 +5,7 @@
       image: rhel-guest
       meta: "group={{ group }},deployment_name={{ deployment }}"
       flavor: m1.small
-      security_groups: application_ports
+      security_groups: "{{ security_group_name }}"
       key_name: ansible_ssh
       nics:
       - net-name: int_network
