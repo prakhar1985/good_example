@@ -1,0 +1,39 @@
+---
+# tasks file for osp-securitygroup
+  - os_security_group:
+      cloud: ospcloud
+      state: present
+      name: application_ports
+      description: ports_open
+    tags:
+      - ospclouded
+  - os_security_group_rule:
+      cloud: ospcloud
+      security_group: application_ports
+      protocol: tcp
+      port_range_min: 22
+      port_range_max: 22
+      remote_ip_prefix: 0.0.0.0/0
+    tags:
+      - ospclouded
+  - os_security_group_rule:
+      cloud: ospcloud
+      security_group: application_ports
+      protocol: tcp
+      port_range_min: 80
+      port_range_max: 80
+      remote_ip_prefix: 0.0.0.0/0
+  - os_security_group_rule:
+      cloud: ospcloud
+      security_group: application_ports
+      protocol: tcp
+      port_range_min: 443
+      port_range_max: 443
+      remote_ip_prefix: 0.0.0.0/0
+  - os_security_group_rule:
+      cloud: ospcloud
+      security_group: application_ports
+      protocol: icmp
+      remote_ip_prefix: 0.0.0.0/0
+    tags:
+      - ospclouded

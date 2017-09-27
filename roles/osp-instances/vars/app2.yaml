@@ -1,0 +1,4 @@
+---
+instance_name: app2
+group: apps
+deployment: dev

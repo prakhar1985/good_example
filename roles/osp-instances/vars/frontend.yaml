@@ -1,4 +1,4 @@
 ---
 instance_name: frontend
-group: frontend
+group: frontends
 deployment: dev
