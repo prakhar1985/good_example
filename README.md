@@ -1,7 +1,6 @@
 main.yaml
  
 Step 1: Deploy Insfrastructure on OSP 10
-*Variables to be set in respective files
 
 >roles/osp-instances/frontend.yaml
 ```
