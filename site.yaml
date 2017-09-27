@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: jumpbox
   roles:
      - osp-workstation
      - osp-network
@@ -30,7 +30,8 @@
   - name: Gather facts
     include_role: 
        name: osp-facts
-
+    tags:
+     - test_inventory
 ###Configuration on OSP Instances
 
 - hosts: dev
@@ -40,4 +41,4 @@
   - name: Ping
     ping:
     tags:
-     - test
+     - test_inventory
