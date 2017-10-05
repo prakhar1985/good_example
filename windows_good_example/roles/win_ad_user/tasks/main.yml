@@ -1,0 +1,10 @@
+# tasks file for roles/win_ad_user
+ - name: Create AD User
+   win_domain_user:
+      name: "{{ item.name }}"
+      firstname: "{{item.firstname }}"
+      surname: "{{ item.surname }}"
+      password: "{{ item.password }}"
+      state: present
+      email: '"{{ item.name }}"@ad..example.opentlc.com'
+   with_items: "{{ user_info }}"
