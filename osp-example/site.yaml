@@ -1,4 +1,5 @@
 - hosts: jumpbox
+  become: yes
   roles:
      - osp-workstation
      - osp-network
