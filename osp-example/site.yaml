@@ -1,7 +1,6 @@
 - hosts: jumpbox
   become: yes
   roles:
-     - osp-workstation
      - osp-network
      - osp-keypair
      - osp-securitygroup
