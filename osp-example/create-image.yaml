@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: jumpbox
   tasks:   
   - name: Download RHEL image
     get_url:
