@@ -14,7 +14,7 @@
       port_range_max: "{{ item.port }}" 
       remote_ip_prefix: "{{ item.ip_prefix }}"
     with_items:
-      - { port: '80', ip_prefix: '20.20.20.0/24' }
+      - { port: '8080', ip_prefix: '0.0.0.0/0' }
       - { port: '22', ip_prefix: '0.0.0.0/0' }
 
         
