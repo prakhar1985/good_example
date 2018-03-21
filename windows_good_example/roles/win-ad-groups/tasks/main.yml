@@ -1,0 +1,9 @@
+---
+# tasks file for roles/win-ad-groups
+win_domain_group:
+  name: "{{ item.group_name }}"
+  scope: "{{ item.scope }}"
+  state: present
+with_items:
+  - "{{ groups }}"
+  
