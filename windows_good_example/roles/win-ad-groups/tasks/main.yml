@@ -3,7 +3,7 @@
 - name: Create windows domain group
   win_group:
     name: "{{ item.group_name }}"
-    scope: "{{ item.scope_name }}"
+#    scope: "{{ item.scope_name }}"
     state: present
   with_items: "{{ ad_groups }}"
 
