@@ -5,6 +5,5 @@
     name: "{{ item.group_name }}"
     scope: "{{ item.scope }}"
     state: present
-  with_items:
-    - "{{ groups }}"
+  with_items: "{{ groups }}"
   
