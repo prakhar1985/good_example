@@ -3,4 +3,4 @@
 #    - ./ad_user_vars.yml
   roles:
     - win-ad-groups
-    - win_ad_user
+#    - win_ad_user

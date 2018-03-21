@@ -1,7 +1,7 @@
 ---
 # tasks file for roles/win-ad-groups
 - name: Create windows domain group
-  win_domain_group:
+  win_group:
     name: "{{ item.group_name }}"
     scope: "{{ item.scope_name }}"
     state: present
