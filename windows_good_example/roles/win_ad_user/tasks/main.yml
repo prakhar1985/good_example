@@ -6,7 +6,7 @@
       surname: "{{ item.surname }}"
       password: "{{ item.password }}"
       state: present
-      email: '"{{ item.name }}"@ad.${GUID}.example.opentlc.com'
+      email: '"{{ item.name }}"@ad1.1473.example.opentlc.com'
       groups:
         - "{{ item.group_name }}"
    with_items: "{{ user_info }}"
