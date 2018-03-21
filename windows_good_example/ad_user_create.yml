@@ -2,4 +2,5 @@
 #  vars_files:
 #    - ./ad_user_vars.yml
   roles:
+    - win-ad-groups
     - win_ad_user
