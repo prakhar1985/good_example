@@ -8,7 +8,7 @@
     tags:
       - tested
   - os_image:
-#      cloud: ospcloud
+      cloud: ospcloud
       name: rhel-guest
       container_format: bare
       disk_format: qcow2
