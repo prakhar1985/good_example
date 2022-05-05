@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: yes
+
+  vars:
+    var1: value1
+    var2: value2
+
+  tasks:
+    - name: Do nothing, just that ansible ran, and ping
+      ping:
+
+    - name: Debug my_personal_variable
+      debug:
+        var: my_personal_variable
