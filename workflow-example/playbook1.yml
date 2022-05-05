@@ -16,4 +16,4 @@
     - name: Set some data to pass down to the 2nd AWS Job template
       set_stats:
         data:
-          my_personal_variable: "{{ ansible_facts.user_gecos }}-papu"
+          my_personal_variable: "{{ ansible_facts.os_family }}-papu"
